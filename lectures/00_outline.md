@@ -1,5 +1,7 @@
 # CT5121 - Advanced Topics in Natural Language Processing
+
 ---
+
 ## Lecturers
 
 * Dr. John P. McCrae
@@ -9,11 +11,13 @@
 * Hossein Khaleghy
 
 ---
+
 ## Lecture Plan
 
 1. Machine Learning for NLP
 2. You choose!
 ---
+
 ## You choose?!
 
 At the end of each week we will have a poll for the next topic and we will 
@@ -42,6 +46,7 @@ Multilingual/modal NLP and Applications
 * Syntax 
 * Question Answering
 ---
+
 ## Multilingual/Multimodal NLP
 
 * Machine Translation
@@ -49,13 +54,16 @@ Multilingual/modal NLP and Applications
 * Under-resourced Languages
 * Multimodal NLP
 ---
+
 ## Applications
 
 * Explainable NLP
 * Computer-aided Language Learning
 * Digital Humanities
 * Legal NLP
+
 ---
+
 ## Lectures
 
 Lectures take place Tuesday from 3-4pm and Wednesday from 9-10am.
@@ -64,6 +72,7 @@ Please read lecture content ahead of lecture and we will discuss it in
 class and work on practical examples.
 
 ---
+
 ## Lectures
 
 The Tuesday lecture will consist of the presentation of the topic and 
@@ -74,11 +83,13 @@ work on examples related to the topic.
 
 
 ---
+
 ## Labs
 
 Labs are Friday 1-3. Work will be related to assignment
 
 ---
+
 ## Assignment
 
 You will develop a project in small groups (2-5). Each member of the team should
@@ -89,6 +100,7 @@ Please decide on groups and submit a title by January 30th
 Submitting the title provides 0.5% of the final grade.
 
 ---
+
 ## Journal 
 
 Your group will keep a journal of your progress. This will be submitted at the
@@ -100,6 +112,7 @@ The journal should include:
 * Any problems you have encountered
 
 ---
+
 ## Lab Sessions
 
 Lab sessions are for use to work on and discuss the project. Groups should
@@ -112,6 +125,7 @@ Each journal entry must be discussed with the lab tutor or lecturer in the lab.
 Journals are worth 15% of the final grade.
 
 ---
+
 ## Presentation
 
 Each group will present their project in the final lab session.
@@ -125,6 +139,7 @@ The schedule for the presentations will be confirmed at a later date.
 Presentations will be peer-marked.
 
 ---
+
 ## Final Report
 
 The final report is due on April 4th.
@@ -134,8 +149,11 @@ This is an individual report detailing the work that you did on the group projec
 This is worth 25% of the final grade.
 
 ---
+
 ## Exam
 
 The exam will be a standard written exam.
 
 It is worth 50% of the final grade.
+
+A mark of 40% on the exam is required to pass the course.

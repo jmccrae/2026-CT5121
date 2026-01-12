@@ -19,6 +19,7 @@
 * Output Layer
 
 ---
+
 <!-- .slide: data-background="#ccc" -->
 ![Neural Network](img/neural_network.png)
 
@@ -148,8 +149,8 @@ $$\mathbf{h_1} = f_0(\mathbf{x}; \mathbf{w_0})$$
 5. Update Weights and Biases
 
 ---
-<!-- .slide: data-background="#ccc" -->
 
+<!-- .slide: data-background="#ccc" -->
 ![Gradient Descent](img/gradient_descent.svg)
 
 ---
