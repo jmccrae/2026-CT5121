@@ -1,11 +1,12 @@
 /**
  * A plugin which enables rendering of math equations inside
- * of reveal.js slides. Essentially a thin wrapper for MathJax 3
+ * of reveal.js slides. Essentially a thin wrapper for MathJax 4
  *
  * @author Hakim El Hattab
  * @author Gerhard Burger
+ * @author Khris Griffis, Ph.D.
  */
-export const MathJax3 = () => {
+export const MathJax4 = () => {
 
     // The reveal.js instance this plugin is attached to
     let deck;
@@ -30,10 +31,10 @@ export const MathJax3 = () => {
     function loadScript( url, callback ) {
 
         let script = document.createElement( 'script' );
-        script.type = "text/javascript"
-        script.id = "MathJax-script"
+        script.type = 'text/javascript';
+        script.id = 'MathJax-script';
         script.src = url;
-        script.async = true
+        script.async = true;
 
         // Wrapper for callback to make sure it only fires once
         script.onload = () => {
@@ -44,34 +45,37 @@ export const MathJax3 = () => {
         };
 
         document.head.appendChild( script );
-
     }
 
     return {
-        id: 'mathjax3',
+        id: 'mathjax4',
         init: function(reveal) {
 
             deck = reveal;
 
-            let revealOptions = deck.getConfig().mathjax3 || {};
-            let options = {...defaultOptions, ...revealOptions};
-            options.tex = {...defaultOptions.tex, ...revealOptions.tex}
-            options.options = {...defaultOptions.options, ...revealOptions.options}
-            options.startup = {...defaultOptions.startup, ...revealOptions.startup}
+            let revealOptions = deck.getConfig().mathjax4 || {};
+            let options = { ...defaultOptions, ...revealOptions };
+            options.tex = { ...defaultOptions.tex, ...revealOptions.tex };
+            options.options = { ...defaultOptions.options, ...revealOptions.options };
+            options.startup = { ...defaultOptions.startup, ...revealOptions.startup };
 
-            let url = options.mathjax || 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+            let url = options.mathjax || 'https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js';
             options.mathjax = null;
 
             window.MathJax = options;
 
-            loadScript( url, function() {
-                // Reprocess equations in slides when they turn visible
-                deck.addEventListener( 'slidechanged', function( event ) {
+            loadScript(url, function() {
+                // MathJax 4.0.0 uses async startup, so we need to wait for it to be ready
+                MathJax.startup.promise.then(() => {
+                    // Initial typeset after startup
                     MathJax.typeset();
-                } );
-            } );
 
+                    // Reprocess equations in slides when they turn visible
+                    deck.addEventListener('slidechanged', function(event) {
+                        MathJax.typeset();
+                    });
+                });
+            });
         }
-    }
-
+    };
 };
