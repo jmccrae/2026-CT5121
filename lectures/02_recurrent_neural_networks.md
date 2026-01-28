@@ -38,9 +38,9 @@ In other tasks, such as computer vision images can be scaled to a fixed size. Ho
   - $h^{t}$: Hidden state at time $t$.
   - $y^{t}$: Output at time $t$.
 
-$$ h^{t} = f(h^{t-1}, x^{t}) $$
+\\[ h^{t} = f(h^{t-1}, x^{t}) \\]
 
-$$ y^{t} = g(h^{t}) $$
+\\[ y^{t} = g(h^{t}) \\]
 
 ---
 
@@ -48,9 +48,9 @@ $$ y^{t} = g(h^{t}) $$
 
 We can use the same weights for every time step.
 
-$$ h^{t} = f(h^{t-1}, x^{t}; W_f) $$
+\\[ h^{t} = f(h^{t-1}, x^{t}; W_f) \\]
 
-$$ y^{t} = g(h^{t}; W_g) $$
+\\[ y^{t} = g(h^{t}; W_g) \\]
 
 ---
 
@@ -68,9 +68,9 @@ Networks can be unrolled in time.
 
 ## Simple RNN
 
-$$ y_i = f(W_{hy} h_i + b_y) $$
+\\[ y_i = f(W_{hy} h_i + b_y) \\]
 
-$$ h_i = g(W_{hh} h_{i-1} + W_{xh} x_i + b_h) $$
+\\[ h_i = g(W_{hh} h_{i-1} + W_{xh} x_i + b_h) \\]
 
 Initially, $h_0$ is set to zero. $f$ and $g$ are non-linear activation functions.
 
@@ -108,7 +108,7 @@ Again a softmax output layer can be used to compute the probability distribution
 
 Simple use of an RNN is as an acceptor. The final state of the RNN is used to classify the input sequence.
 
-$$ y = f(W_{hy} h_n + b_y) $$
+\\[ y = f(W_{hy} h_n + b_y) \\]
 
 No prediction is made for other time steps.
 
@@ -123,9 +123,9 @@ No prediction is made for other time steps.
 
 Instead of discarding the hidden states, we can use them to compute a weighted sum of the hidden states.
 
-$$ y = f(\sum_{i=1}^n \alpha_i h_i) $$
+\\[ y = f(\sum_{i=1}^n \alpha_i h_i) \\]
 
-$$ \alpha_i = \frac{\exp(w_{\alpha}^T h_i)}{\sum_{j=1}^n \exp(w_{\alpha}^T h_j)} $$
+\\[ \alpha_i = \frac{\exp(w_{\alpha}^T h_i)}{\sum_{j=1}^n \exp(w_{\alpha}^T h_j)} \\]
 
 ---
 
@@ -162,11 +162,11 @@ https://explosion.ai/blog/deep-learning-formula-nlp
 
 ## Bidirectional RNNs (formulae)
 
-$$ u_i = f(W_{h} u_{i-1} + W_{x} x_i + b_{h}) $$
+\\[ u_i = f(W_{h} u_{i-1} + W_{x} x_i + b_{h}) \\]
 
-$$ v_i = f(V_h v_{i+1} + V_x x_i + c_h) $$
+\\[ v_i = f(V_h v_{i+1} + V_x x_i + c_h) \\]
 
-$$ h_i = u_i + v_i $$
+\\[ h_i = u_i + v_i \\]
 
 ---
 
@@ -206,7 +206,7 @@ $$ h_i = u_i + v_i $$
 - A gate is a function that takes two inputs and produces an output.
 - The output is the pairwise product of the inputs.
 
-$$ g = x \odot y $$
+\\[ g = x \odot y \\]
 
 ---
 
@@ -281,9 +281,9 @@ _for reference only_
 
 ## State Space Machines (SSMs)
 
-$$ \dot{x} = A(t)x(t) + B(t)u(t) $$
+\\[ \dot{x} = A(t)x(t) + B(t)u(t) \\]
 
-$$ y(t) = C(t)x(t) + D(t)u(t) $$
+\\[ y(t) = C(t)x(t) + D(t)u(t) \\]
 
 - $x(t)$: hidden state
 - $u(t)$: input

@@ -47,7 +47,7 @@ Processes information from previous layer to the next layer
 
 Each layer has at least one linear transformation
 
-$$\mathbf{y} = \mathbf{Ax} + \mathbf{b}$$
+\\[mathbf{y} = \mathbf{Ax} + \mathbf{b}\\]
 
 Where
 
@@ -72,7 +72,7 @@ Popular choices:
 
 ## Sigmoid Function
 
-$$\sigma(x) = \frac{e^x}{1+e^x}$$
+\\[sigma(x) = \frac{e^x}{1+e^x}\\]
 
 ---
 
@@ -82,7 +82,7 @@ $$\sigma(x) = \frac{e^x}{1+e^x}$$
 
 ## Hyperbolic Tangent Fuction
 
-$$\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}$$
+\\[tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}\\]
 
 ---
 
@@ -92,7 +92,7 @@ $$\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}$$
 
 ## ReLU - Rectified Linear Unit
 
-$$\text{relu}(x) = \left\lbrace \begin{array}{cc} x & \text{if}~x > 0 \\ 0 & \text{otherwise} \end{array} \right.$$
+\\[text{relu}(x) = \left\lbrace \begin{array}{cc} x & \text{if}~x > 0 \\ 0 & \text{otherwise} \end{array} \right.\\]
 
 There are also smooth variants of ReLU such as **softplus** and **GeLU**
 
@@ -112,7 +112,7 @@ Depends on the task
 
 ## Softmax Output
 
-$$\text{softmax}_i(\mathbf{x}) = \frac{e^{x_i}}{\sum_j e^{x_j}}$$
+\\[text{softmax}_i(\mathbf{x}) = \frac{e^{x_i}}{\sum_j e^{x_j}}\\]
 
 Output is a probability distribution over the outcomes.
 
@@ -122,7 +122,7 @@ Output is a probability distribution over the outcomes.
 
 A neural network can be considered as a function
 
-$$f(\mathbf{x} ; \mathbf{w})$$
+\\[f(\mathbf{x} ; \mathbf{w})\\]
 
 Where $\mathbf{x}$ are the inputs and $\mathbf{w}$ are the learnable weights
 
@@ -130,13 +130,13 @@ Where $\mathbf{x}$ are the inputs and $\mathbf{w}$ are the learnable weights
 
 ## A neural network
 
-$$f(\mathbf{x} ; \mathbf{w}) = f_n(\mathbf{h_n}; \mathbf{w_n})$$
+\\[f(\mathbf{x} ; \mathbf{w}) = f_n(\mathbf{h_n}; \mathbf{w_n})\\]
 
-$$\mathbf{h_n} = f_{n-1}(\mathbf{h_{n-1}}; \mathbf{w_{n-1}})$$
+\\[mathbf{h_n} = f_{n-1}(\mathbf{h_{n-1}}; \mathbf{w_{n-1}})\\]
 
 ...
 
-$$\mathbf{h_1} = f_0(\mathbf{x}; \mathbf{w_0})$$
+\\[mathbf{h_1} = f_0(\mathbf{x}; \mathbf{w_0})\\]
 
 ---
 
@@ -174,7 +174,7 @@ The loss functions measures the quality of the current solution
 
 The goal of optimization is to minimize this function
 
-$$\min_\mathbf{w} \mathcal{L}(\mathbf{w})$$
+\\[min_\mathbf{w} \mathcal{L}(\mathbf{w})\\]
 
 ---
 
@@ -182,7 +182,7 @@ $$\min_\mathbf{w} \mathcal{L}(\mathbf{w})$$
 
 Measures the Euclidean loss between the system output and the data
 
-$$\mathcal{L}(\mathbf{w}) = \sum (y_i - f(x_i; \mathbf{w}))^2$$
+\\[mathcal{L}(\mathbf{w}) = \sum (y_i - f(x_i; \mathbf{w}))^2\\]
 
 ---
 
@@ -190,7 +190,7 @@ $$\mathcal{L}(\mathbf{w}) = \sum (y_i - f(x_i; \mathbf{w}))^2$$
 
 Used two compare two probability distributions
 
-$$\mathcal{L}(\mathbf{w}) = \sum -(y_i \log(p_i) + (1 - y_i) \log(1 - p_i))$$
+\\[mathcal{L}(\mathbf{w}) = \sum -(y_i \log(p_i) + (1 - y_i) \log(1 - p_i))\\]
 
 Assume $0 \leq y_i \leq 1$, $0 < p_i < 1$
 
@@ -206,11 +206,11 @@ Calculate all the results and all the hidden layer values
 
 We calculate the gradient of the function in order to classify
 
-$$\frac{\partial \mathcal{L}}{\partial \mathbf{w}}$$
+\\[frac{\partial \mathcal{L}}{\partial \mathbf{w}}\\]
 
 This is done by backpropagation, e.g.,
 
-$$\frac{\partial \mathcal{L}}{\partial \mathbf{w_i}} = \frac{\partial \mathcal{L}}{\partial \mathbf{h_i}} \frac{\partial \mathbf{h_i}}{\partial \mathbf{w_i}}$$
+\\[frac{\partial \mathcal{L}}{\partial \mathbf{w_i}} = \frac{\partial \mathcal{L}}{\partial \mathbf{h_i}} \frac{\partial \mathbf{h_i}}{\partial \mathbf{w_i}}\\]
 
 ---
 
@@ -232,7 +232,7 @@ dfdx = jax.grad(f)
 
 We update the weights by gradient descent
 
-$$\mathbf{w}' \leftarrow \mathbf{w} - \eta \frac{\partial \mathcal{L}}{\partial \mathbf{w}}$$
+\\[mathbf{w}' \leftarrow \mathbf{w} - \eta \frac{\partial \mathcal{L}}{\partial \mathbf{w}}\\]
 
 $\eta$ is a magic constant called the **learning rate**.
 
@@ -260,7 +260,7 @@ called a **mini-batch** and evaluate the loss function on this
 
 We have a learning rate for each parameter
 
-$$w_i' \leftarrow w_i - \eta_i \frac{\partial \mathcal{L}}{\partial w_i}$$
+\\[w_i' \leftarrow w_i - \eta_i \frac{\partial \mathcal{L}}{\partial w_i}\\]
 
 Most popular method to calculate this is **Adam** an adaptive method with moments
 
