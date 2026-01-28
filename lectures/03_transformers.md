@@ -34,11 +34,11 @@
 - In self-attention we compute three vectors for each word: Query, Key, Value
 - Each of these vectors is a simple linear transformation of the word embedding
 
-$$ q_i = W_Q x_i + b_Q $$
+$$q_i = W_Q x_i + b_Q$$
 
-$$ k_i = W_K x_i + b_K $$
+\[k_i = W_K x_i + b_K\]
 
-$$ v_i = W_V x_i + b_V $$
+$v_i = W_V x_i + b_V$
 
 ---
 
