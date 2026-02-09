@@ -50,7 +50,7 @@
 
 ---
 
-## In-content Learning
+## In-context Learning
 
 - In-context learning is a technique to adapt a pre-trained model to a specific task
 - It does not require fine-tuning the entire model (i.e., updating the weights)
@@ -99,7 +99,7 @@
 - The idea is to add a small adapter layer to each transformer layer
 - This adapter layer calculates a low-rank delta, $\Delta W$, that is added to the weights of the self-attention layer
 
-\\[ W_{new} = W_{old} + \Delta W \\]
+$$ W_{new} = W_{old} + \Delta W $$
 
 ---
 
@@ -129,7 +129,7 @@
 
 - Floating-point numbers consist of a sign bit, exponent, and mantissa
 
-\\[ \text{float} = (-1)^s \times 2^{e} \times 1.m \\]
+$$ \text{float} = (-1)^s \times 2^{e} \times 1.m $$
 
 NB Mantissa is a binary fraction
 
@@ -151,7 +151,7 @@ NB Mantissa is a binary fraction
 
 We can quantize to integers using the following formula:
 
-\\[ x_q = \text{round}(\frac{x}{s} + Z ) \\]
+$$ x_q = \text{round}(\frac{x}{s} + Z ) $$
 
 Where $s$ is the scale factor and $Z$ is the zero-point
 
@@ -195,13 +195,13 @@ This allows us to quantize down to 8, 4 or even 2 bits.
 
 - Siamese network, uses two similar examples $x_1$ and $x_2$.
 
-\\[ 
+$$ 
 \begin{aligned}
 h_1 &= f(x_1)\\\\
 h_2 &= f(x_2)\\\\
 \text{similarity} &= \text{cosine}(h_1, h_2)
 \end{aligned}
-\\]
+$$
 
 ---
 
@@ -209,7 +209,7 @@ h_2 &= f(x_2)\\\\
 
 - Triplet loss, uses a positive example $x_p$ and a negative example $x_n$.
 
-\\[ \text{loss} = \max(0, \text{margin} - \text{cosine}(h_a, h_p) + \text{cosine}(h_a, h_n)) \\]
+$$ \text{loss} = \max(0, \text{margin} - \text{cosine}(h_a, h_p) + \text{cosine}(h_a, h_n)) $$
 
 ---
 
