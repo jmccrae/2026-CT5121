@@ -102,7 +102,7 @@
 
 ---
 
-![MCP Architecture](img/mcp.webp)
+![MCP Architecture](img/mcp.png)
 
 ---
 
@@ -221,6 +221,6 @@
 
 # Sources
 
-https://www.dailydoseofds.com/ai-agents-crash-course-part-10-with-implementation/
-https://www.descope.com/learn/post/mcp
-https://www.sciencedirect.com/science/article/pii/S1566253525006712
+- https://www.dailydoseofds.com/ai-agents-crash-course-part-10-with-implementation/
+- https://www.descope.com/learn/post/mcp
+- https://www.sciencedirect.com/science/article/pii/S1566253525006712
