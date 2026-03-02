@@ -8,7 +8,7 @@
 - High-throughput Inference
 - Guardrails
 
---- 
+---
 
 ## Why Parallelism?
 
@@ -129,9 +129,9 @@ The practical "rule of thumb" derived from the paper is that a model should be t
 - **Solution**: Cache the $K$ and $V$ values for all previous tokens.
 - Saves computation time, but requires more memory.
 
-\\[
-\text{Size} = 2 \times \text{\#layers} \times \text{\#heads} \times \text{head_size} \times \text{seq\_len}
-\\]
+$$ 
+\text{Size} = 2 \times \text{\#layers} \times \text{\#heads} \times \text{head\_size} \times \text{seq\_len}
+$$
 
 ---
 
@@ -161,9 +161,9 @@ The practical "rule of thumb" derived from the paper is that a model should be t
 
 - If we reject the draft token, we can sample from the residual distribution:
 
-\\[
+$$
 r(x) = \frac{max(0, p(x) - q(x))}{Z}
-\\]
+$$
 
 Where $Z$ is a normalization constant to ensure $r(x)$ is a valid probability distribution.
 
