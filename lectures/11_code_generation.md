@@ -145,7 +145,6 @@
 
 \\[
 + \gamma \cdot \mathrm{AST} + \delta \cdot \mathrm{DataFlow}
-
 \\]
 
 ---
