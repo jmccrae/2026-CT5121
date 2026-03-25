@@ -140,7 +140,12 @@
 - Improves BLEU by considering code syntax and semantics.  
 
 \\[
-\mathrm{CodeBLEU} = \alpha \cdot \mathrm{BLEU} + \beta \cdot \mathrm{BLEU}_\mathrm{weight}\\ + \gamma \cdot \mathrm{AST} + \delta \cdot \mathrm{DataFlow}
+\mathrm{CodeBLEU} = \alpha \cdot \mathrm{BLEU} + \beta \cdot \mathrm{BLEU}_\mathrm{weight}
+\\]
+
+\\[
++ \gamma \cdot \mathrm{AST} + \delta \cdot \mathrm{DataFlow}
+
 \\]
 
 ---
